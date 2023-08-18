@@ -1,6 +1,5 @@
 ## poc-kafka-golang
 
-
 # Para fins de uso e configuração do host.dokcer.internal ao seu docker
 
     - No windows o caminho: D:\Windows\System32\drivers\etc
@@ -15,14 +14,13 @@
 # Criando projeto go e acessando o docker container
 
     - docker exec -it gokafka bash
-        - comando para criação do projeto: go mod init github.com/tecwagner/go-kafka-messaging
+        - comando para criação do projeto: go mod init github.com/tecwagner/go-kafka-golang
 
     - Entrar no container do kafka:
-        - docker exec -it kafka-container bash   
+        - docker exec -it kafka-container bash
 
     - Criando um topic para aplicação do kafka:
         - criar um topic por meio de linha de comando: kafka-topics --create --bootstrap-server=localhost:9092 --topic=payments --partitions=3
-
 
 # Publicando a primera mensagem.
 
@@ -33,9 +31,14 @@
 
         - O Metodo Publish(): Publica as mensagens que estão sendo produzidas
 
-# Delivery Repor        
+# Delivery Repor
 
     - Devivery channels, é um canal de comunicação do kafka entre a publicação da mensagen e uma função ou uma rotina que foi executada.
     - Envia o retorno para um canal de comunicação.
     - Teremos um metodo que ficará lendo as mensagens que passaram por essse canal.
     - Quando chegar uma mensagens nesse canal, teremos uma mensagen de retorno do que aconteceu com envio.
+
+# Consumindo mensagens
+
+    - No diretorio cmd/consumer
+        - Foi implementado o metodo para que seja feito o consumo das mensagens publicadas no kafka
