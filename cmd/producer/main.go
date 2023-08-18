@@ -15,7 +15,7 @@ func main() {
 	producer := NewKafkaProducer()
 	// Publicando mensagem
 	//Ao definir uma key para publicação de mensagem é uma forma de garantir que as mesmas seja ordenadas e cairam sempre na mesma partição
-	Publish("Pagamento Aprovado", "payments", producer, []byte("transfer"), deliveryChannel)
+	Publish("Pagamento Em Analise", "payments", producer, []byte("transfer"), deliveryChannel)
 
 	// gol routine
 	go DeliveryReport(deliveryChannel)
