@@ -42,3 +42,11 @@
 
     - No diretorio cmd/consumer
         - Foi implementado o metodo para que seja feito o consumo das mensagens publicadas no kafka
+
+    - Foi criado três partições de grupo para ler as mensagens.
+
+    - O Grupo apontado para o consumer deve ser o que foi informado no mapeamento do configMap
+
+    - O comando é para listar as partições e os grupos de consumir de mensagens do group goapp-group: kafka-consumer-groups --bootstrap-server=localhost:9092 --describe --group=goapp-group
+
+    - É permitido que seja criado novos consumer para o mesmo groups, para que seja processado as mensagens mais rapidamente
